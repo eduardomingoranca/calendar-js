@@ -4,7 +4,7 @@
 
 ### :memo: Sobre a aplicação
 Este é um projeto pessoal de um calendario tendo como base alguns tutoriais assistidos na internet.
-### Funcionalidades
+### :gear: Funcionalidades
 A funcionalidade do calendario é mostrar todos os meses dos anos e o dia atual. 
 
 ### :hammer: Tecnologias 

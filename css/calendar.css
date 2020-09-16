@@ -1,0 +1,342 @@
+:root {
+  --bg: #d3d3d3;
+  --color-button: #000;
+  --bg-calendar: #fff;
+  --bg-today: #301934;
+  --color-today: #301934; 
+  --border-today: 2px solid #301934; 
+}
+
+* { 
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* corpo da pagina */
+body {
+  background-color: var(--bg);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* container aonde ficará o calendário completo */
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  margin-right: 15px;
+}
+
+/* o calendario */
+.calendar {
+  border-radius: 10px 0px 0px 10px;
+  background-color: var(--bg-calendar);
+  border: var(--border-calendar);
+}
+
+/* local onde será informado o dia atual */
+.calendar-today {
+  width: 300px;
+  height: 465px;  
+  border-radius: 0px 10px 10px 0px;
+  background-color: var(--bg-today);
+  position: relative;
+  right: 0px;
+}
+
+/* local aonde será informádo os meses */
+.months {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  color: var(--color-button);
+  padding: 40px 30px;
+  border-radius: 10px 0px 0px 0px;
+}
+
+/* dia da semana atual */
+.day-week {
+  width: 50%;
+  margin: 60px auto;
+  font-size: 25px;
+  position: relative;
+  bottom: -30px;
+  text-align: center;  
+  color: #fff;
+  font-weight: bold;
+}
+
+/* numero do dia da semana atual */
+.number-day {
+  font-size: 150px;
+  width: 50%;
+  margin: -10px 65px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* dias da semana  */
+.week {
+  display: flex;
+  color: var(--color-button);
+  padding: 7px 0;
+  font-weight: bold;
+}
+
+/* numeros dos dias */
+.days {
+  display: flex; 
+  flex-wrap: wrap;
+  color: var(--color-button);
+  padding: 10px 0;
+}
+
+/* espaçamento dos números dos dias */
+.days div {
+  margin-bottom: 29px;
+}
+
+/* posicionando os dias semana e o número dos dias */
+.week div, 
+.days div {
+  width: 14.28%;
+  text-align: center;
+} 
+
+/* estilizando as divs ao passar o mouse */
+.days div:hover:not(.today){
+  background-color: #dfe6e9;
+  color: var(--number-color);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* estilizando a div do dia atual */
+.today {
+  background-color: var(--color-today);
+  font-weight: bold;
+  border: var(--border-today);
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  color: #fff;
+}
+
+/* estiliza ao passar o mouse */
+.today:hover {
+  background-color: #fff;
+  color: var(--color-today);
+  cursor: pointer;
+}
+
+/* estilizando o domingo */
+.sunday {
+  color: #ff0000;    
+}
+
+div:nth-child(1):not(.months):not(.before):not(.day-week):not(.before-date) {
+  color: #ff0000;
+}
+
+div:nth-child(8) {
+  color: #ff0000;
+}
+
+div:nth-child(15) {
+  color: #ff0000;
+}
+
+div:nth-child(22) {
+  color: #ff0000;
+}
+
+div:nth-child(29) {
+  color: #ff0000;
+}
+
+div:nth-child(36) {
+  color: #ff0000;
+}
+
+/* data anterior */
+.before-date {
+  color: #999;
+}
+
+/* setas dos meses anteriores e próximos */
+.before,
+.after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+}
+
+/* ao passor o mouse nas setas altera o cursor */
+.before:hover, 
+.after:hover {
+  cursor: pointer;
+}
+
+/* responsividade */
+@media(max-width: 1024px) {
+  
+  .calendar {
+    border-radius: 10px 0px 0px 10px;
+    background-color: var(--bg-calendar);
+    width: 380px;
+    height: 400px;
+  }
+
+  .calendar-today {
+    width: 285px;
+    height: 400px;  
+    border-radius: 0px 10px 10px 0px;
+    background-color: var(--bg-today);
+    position: relative;
+    right: 0px;
+  }
+
+}
+
+@media(max-width: 768px) {
+  
+  .calendar {
+    border-radius: 10px 0px 0px 10px;
+    background-color: var(--bg-calendar);
+    width: 290px;
+    height: 400px;
+  }
+
+  .calendar-today {
+    width: 200px;
+    height: 400px;  
+    border-radius: 0px 10px 10px 0px;
+    background-color: var(--bg-today);
+    position: relative;
+    right: 0px;
+  }
+
+  .number-day {
+   font-size: 120px;
+   width: 50%;
+   margin: -19px 30px;
+   font-weight: 700;
+   color: #fff;
+  }
+
+}
+
+@media(max-width: 425px) {
+  
+  .calendar {
+    border-radius: 10px 0px 0px 10px;
+    background-color: var(--bg-calendar);
+    width: 175px;
+    height: 400px;
+  }
+
+  .calendar-today {
+    width: 100px;
+    height: 400px;  
+    border-radius: 0px 10px 10px 0px;
+    background-color: var(--bg-today);
+    position: relative;
+    right: 0px;
+  }
+
+  
+  .day-week {
+   width: 10px;
+   margin: 60px 13px;
+   font-size: 19px;
+   position: relative;
+   bottom: -30px;
+   text-align: center;  
+   color: #fff;
+   font-weight: bold;
+  }
+
+  .number-day {
+   font-size: 55px;
+   width: 50%;
+   margin: 15px 20px;
+   font-weight: 700;
+   color: #fff;
+  }
+
+  #month,
+  #year {
+    font-size: 10px;
+  }
+
+
+  .before,
+  .after {
+    font-size: 20px;
+  }
+
+  .week {
+    font-size: 11px;
+  }
+
+}
+
+
+@media(max-width: 375px) {
+  
+  .calendar {
+    border-radius: 10px 0px 0px 10px;
+    background-color: var(--bg-calendar);
+    width: 170px;
+    height: 400px;
+  }
+
+  .calendar-today {
+    width: 73px;
+    height: 400px;  
+    border-radius: 0px 10px 10px 0px;
+    background-color: var(--bg-today);
+    position: relative;
+    right: 0px;
+  }
+
+  
+  .day-week {
+   width: 10px;
+   margin: 60px 13px;
+   font-size: 13px;
+   position: relative;
+   bottom: -30px;
+   text-align: center;  
+   color: #fff;
+   font-weight: bold;
+  }
+
+  .number-day {
+   font-size: 45px;
+   width: 50%;
+   margin: 15px 15px;
+   font-weight: 700;
+   color: #fff;
+  }
+
+  #month,
+  #year {
+    font-size: 10px;
+  }
+
+
+  .before,
+  .after {
+    font-size: 20px;
+  }
+
+  .week {
+    font-size: 11px;
+  }
+
+}
